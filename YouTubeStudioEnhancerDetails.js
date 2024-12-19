@@ -1,3 +1,4 @@
+window.addEventListener('load', function() {
   function onclickButton() {
     document.querySelector('main').scrollTo(0, document.querySelector('ytcp-video-details-section').scrollHeight);
 
@@ -72,3 +73,4 @@
   }, el => {
     observeCheckbox();
   });
+});

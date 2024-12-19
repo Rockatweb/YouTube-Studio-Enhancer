@@ -1,5 +1,6 @@
 const path = window.location.origin;
 
+window.addEventListener('load', function() {
 
   function onWindowopenButtonClick(selected) {
     selected.forEach((elm, key) => {
@@ -97,3 +98,4 @@ const path = window.location.origin;
   }, el => {
     observeCheckbox();
   });
+});

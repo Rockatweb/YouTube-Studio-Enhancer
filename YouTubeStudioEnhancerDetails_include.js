@@ -4,7 +4,7 @@
 // @version      0.01
 // @description  A tooling to make YouTube Studio much better
 // @author       You
-// @match        https://studio.youtube.com/video/*/edit
+// @include      https://studio.youtube.com/video/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
 // @require      https://raw.githubusercontent.com/Rockatweb/YouTube-Studio-Enhancer/refs/heads/main/YouTubeStudioEnhancerDetails.js
 // @grant        GM_xmlhttpRequest

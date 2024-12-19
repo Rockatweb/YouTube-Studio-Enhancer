@@ -37,7 +37,7 @@ window.addEventListener('load', function() {
       if (catContainer) {
         catContainer.scrollIntoView();
       }
-    }, 4000);
+    }, 1000);
   }
 
   function observeCheckbox () {

@@ -8,6 +8,8 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
 // @require      https://raw.githubusercontent.com/Rockatweb/YouTube-Studio-Enhancer/refs/heads/main/YouTubeStudioEnhancerDetails.js
 // @grant        GM_xmlhttpRequest
+// @grant        GM_getResourceText
+// @grant        GM_addStyle
 // @run-at       document-start
 // ==/UserScript==
 

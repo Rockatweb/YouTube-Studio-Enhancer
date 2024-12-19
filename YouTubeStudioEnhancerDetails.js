@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
     }, 1000);
   }
 
-  function observeCheckbox () {
+  function callbackButton () {
     const button = document.createElement('button');
     button.innerText = 'Toggle';
     document.querySelector('ytcp-entity-page-header h1').appendChild(button);
@@ -71,6 +71,6 @@ window.addEventListener('load', function() {
     elm: 'ytcp-video-details-section',
     recursive: true,
   }, el => {
-    observeCheckbox();
+    callbackButton();
   });
 });

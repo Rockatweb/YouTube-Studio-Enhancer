@@ -6,8 +6,10 @@
 // @author       You
 // @match        https://studio.youtube.com/channel/UCCP6P-4slm9zxgtT6NoJ2ag/videos/upload*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
-// @require      https://github.com/Rockatweb/YouTube-Studio-Enhancer/blob/main/YouTubeStudioEnhancerList.js
+// @require      https://raw.githubusercontent.com/Rockatweb/YouTube-Studio-Enhancer/refs/heads/main/YouTubeStudioEnhancerList.js
 // @grant        GM_xmlhttpRequest
+// @grant        GM_getResourceText
+// @grant        GM_addStyle
 // @run-at       document-start
 // ==/UserScript==
 
@@ -35,7 +37,7 @@
 
   GM_xmlhttpRequest({
     method: 'GET',
-    url: 'https://github.com/Rockatweb/YouTube-Studio-Enhancer/blob/main/YouTubeStudioEnhancerList.js',
+    url: 'https://raw.githubusercontent.com/Rockatweb/YouTube-Studio-Enhancer/refs/heads/main/YouTubeStudioEnhancerList.js',
     onload: (ev) => {
       addScriptToHead(ev.responseText);
     },

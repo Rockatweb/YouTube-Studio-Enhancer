@@ -41,14 +41,19 @@ window.addEventListener('load', function() {
   }
 
   function callbackButton () {
-    const button = document.createElement('button');
-    button.innerText = 'Toggle';
-    document.querySelector('ytcp-entity-page-header h1').appendChild(button);
 
-    button.addEventListener('click', ()=>{
+    waitForAddedNode('ytcp-video-details-section').then(elm => {
       onclickButton();
-      return false;
-    });
+    })
+
+    // const button = document.createElement('button');
+    // button.innerText = 'Toggle';
+    // document.querySelector('ytcp-entity-page-header h1').appendChild(button);
+    //
+    // button.addEventListener('click', ()=>{
+    //   onclickButton();
+    //   return false;
+    // });
   }
 
   function waitForAddedNode(selector) {

@@ -37,7 +37,9 @@ window.addEventListener('load', function() {
                 const german = document.querySelector('tp-yt-paper-item#text-item-39');
 
                 if (german) {
-                  german.click();
+                  setTimeout(() => {
+                    german.click();
+                  }, 2000);
                 }
               });
             }

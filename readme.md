@@ -8,7 +8,6 @@ Video-Details:
 With the second script you will automatically open the "More Details"-Section in the Details-Editor.
 Also will the script automatically change the following settings
 
-The Video-Language will be set to German
 Changed Content - Will be set to "No"
 Allow automatic location information - Will be deselected
 Allow automatic concepts - Will be deselected

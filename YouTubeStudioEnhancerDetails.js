@@ -70,8 +70,13 @@ window.addEventListener('load', function() {
   }
 
   function callbackButton () {
-    waitForAddedNode('ytcp-button#toggle-button').then(elm => {
+    const button = document.createElement('button');
+    button.innerText = 'Toggle';
+    document.querySelector('ytcp-entity-page-header h1').appendChild(button);
+
+    button.addEventListener('click', ()=>{
       onclickButton();
+      return false;
     });
   }
 

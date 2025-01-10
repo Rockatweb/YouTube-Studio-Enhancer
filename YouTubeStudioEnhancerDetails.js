@@ -12,14 +12,7 @@ window.addEventListener('load', function() {
 
       console.log(toggleButton);
 
-      setTimeout(() => {
-        const metaData = document.querySelectorAll('ytcp-video-metadata-editor-advanced');
-
-        if (!metaData) {
-          return false;
-        }
-
-
+      waitForAddedNode('ytcp-video-metadata-editor-advanced').then(elm => {
         const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
         console.log(alteredData);
         if (alteredData) {
@@ -47,7 +40,7 @@ window.addEventListener('load', function() {
         if (catContainer) {
           catContainer.scrollIntoView();
         }
-      }, 2000);
+      });
     }
 
   }
@@ -56,7 +49,7 @@ window.addEventListener('load', function() {
 
     waitForAddedNode('ytcp-button#toggle-button').then(elm => {
       onclickButton();
-    })
+    });
 
     // const button = document.createElement('button');
     // button.innerText = 'Toggle';

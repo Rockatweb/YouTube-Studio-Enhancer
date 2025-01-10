@@ -42,7 +42,7 @@ window.addEventListener('load', function() {
 
   function callbackButton () {
 
-    waitForAddedNode('ytcp-video-details-section').then(elm => {
+    waitForAddedNode('ytcp-button#toggle-button').then(elm => {
       onclickButton();
     })
 

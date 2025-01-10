@@ -2,7 +2,7 @@ window.addEventListener('load', function() {
   function onclickButton() {
     document.querySelector('main').scrollTo(0, document.querySelector('ytcp-video-details-section').scrollHeight);
 
-    const toggleButton = document.querySelector('ytcp-button#toggle-button');
+    const toggleButton = document.querySelector('ytcp-button#toggle-button button');
 
     if (toggleButton) {
 

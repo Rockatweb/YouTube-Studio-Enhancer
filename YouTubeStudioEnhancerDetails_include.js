@@ -31,6 +31,11 @@
           document.head.appendChild(scriptElement);
         }
       });
+
+      if (!document.documentElement) {
+        console.error('Element not found:', document.documentElement);
+        return false;
+      }
       observer.observe(document.documentElement, { childList: true, subtree: true });
     }
   }

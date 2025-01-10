@@ -57,6 +57,8 @@ window.addEventListener('load', function() {
     if (!el) {
       console.error('Element not found:', el);
       return false;
+    } else {
+      console.log(el);
     }
 
     new MutationObserver((mutations, observer) => {

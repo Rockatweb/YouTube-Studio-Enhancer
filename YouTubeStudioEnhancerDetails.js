@@ -25,10 +25,15 @@ window.addEventListener('load', function() {
           if (elm) {
             const language = document.querySelector('ytcp-form-language-input');
 
+            console.log('language', language);
+
             if (language) {
               language.click();
 
+              console.log('language click');
+
               waitForAddedNode('ytcp-text-menu').then(elm => {
+                console.log('ytcp-text-menu', elm);
                 const german = document.querySelector('tp-yt-paper-item#text-item-39');
 
                 if (german) {

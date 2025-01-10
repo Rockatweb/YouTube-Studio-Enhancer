@@ -4,40 +4,52 @@ window.addEventListener('load', function() {
 
 
     console.log('toggle meee');
-    const toggleButton = document.querySelector('ytcp-button#toggle-button button');
+    const toggleButton = document.querySelector('ytcp-button#toggle-button');
 
-    toggleButton.click();
+    console.log(toggleButton);
+    if (toggleButton) {
+      toggleButton.click();
+
+      console.log(toggleButton);
+
+      setTimeout(() => {
+        const metaData = document.querySelectorAll('ytcp-video-metadata-editor-advanced');
+
+        if (!metaData) {
+          return false;
+        }
 
 
-    setTimeout(() => {
-      const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
-      console.log(alteredData);
-      if (alteredData) {
-        alteredData.click();
-      } else {
-        alert('altered Data radio not found');
-      }
+        const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
+        console.log(alteredData);
+        if (alteredData) {
+          alteredData.click();
+        } else {
+          alert('altered Data radio not found');
+        }
 
 
-      const autoLocation = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(8) ytcp-checkbox-lit');
-      if (autoLocation) {
-        autoLocation.click();
-      } else {
-        alert('location checkbox not found');
-      }
+        const autoLocation = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(8) ytcp-checkbox-lit');
+        if (autoLocation) {
+          autoLocation.click();
+        } else {
+          alert('location checkbox not found');
+        }
 
-      const autoConcept = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(11) ytcp-form-checkbox');
-      if (autoConcept) {
-        autoConcept.click();
-      } else {
-        alert('auto concept checkbox not found');
-      }
+        const autoConcept = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(11) ytcp-form-checkbox');
+        if (autoConcept) {
+          autoConcept.click();
+        } else {
+          alert('auto concept checkbox not found');
+        }
 
-      const catContainer = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced#category-container');
-      if (catContainer) {
-        catContainer.scrollIntoView();
-      }
-    }, 1000);
+        const catContainer = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced#category-container');
+        if (catContainer) {
+          catContainer.scrollIntoView();
+        }
+      }, 2000);
+    }
+
   }
 
   function callbackButton () {

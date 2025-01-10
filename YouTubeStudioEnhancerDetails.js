@@ -7,6 +7,7 @@ window.addEventListener('load', function() {
     if (toggleButton) {
 
       if (!document.querySelector('ytcp-video-metadata-editor-advanced')) {
+        console.log('toggleButton.click');
         toggleButton.click();
       }
 

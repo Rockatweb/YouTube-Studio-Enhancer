@@ -5,7 +5,10 @@ window.addEventListener('load', function() {
     const toggleButton = document.querySelector('ytcp-button#toggle-button');
 
     if (toggleButton) {
-      toggleButton.click();
+
+      if (!document.querySelector('ytcp-video-metadata-editor-advanced')) {
+        toggleButton.click();
+      }
 
       waitForAddedNode('ytcp-video-metadata-editor-advanced').then(elm => {
         console.log('metadata editor', elm);

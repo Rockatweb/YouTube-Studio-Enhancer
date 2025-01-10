@@ -55,7 +55,7 @@ window.addEventListener('load', function() {
     const el = document.querySelector(params.elm);
 
     if (!el) {
-      console.error('Element not found:', el);
+      console.error('Element not found:', params.elm);
       return false;
     } else {
       console.log(el);
@@ -75,7 +75,7 @@ window.addEventListener('load', function() {
   }
 
   waitForAddedNode({
-    elm: '.ytcp-app[name="video.edit"]',
+    elm: '.all-pages',
     recursive: true,
   }, el => {
     callbackButton();

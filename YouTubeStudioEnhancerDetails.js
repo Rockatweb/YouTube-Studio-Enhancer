@@ -6,10 +6,14 @@ window.addEventListener('load', function() {
 
     if (toggleButton) {
 
-      const metadataVisible = document.querySelector('ytcp-video-metadata-editor-advanced').checkVisibility();
+      const metadata = document.querySelector('ytcp-video-metadata-editor-advanced');
+      let metadataVisible = false;
+      if (metadata) {
+        metadataVisible = metadata.checkVisibility();
+      }
 
       console.log('metadataVisible', metadataVisible);
-      if (!metadataVisible) {
+      if (!metadata && !metadataVisible) {
         console.log('toggleButton.click');
         toggleButton.click();
       }

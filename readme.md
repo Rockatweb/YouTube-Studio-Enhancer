@@ -1,4 +1,4 @@
-With this to little Tampermonkey-Helpers for YouTube-Studio you get some nice little functions.
+With this two Tampermonkey-Helpers for YouTube-Studio you get some nice little functions.
 
 Video-List:
 When you select more than one video you will get a new button in the action-bar to open all detail-pages for the selected video with one click.

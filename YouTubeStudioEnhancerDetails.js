@@ -2,69 +2,71 @@ window.addEventListener('load', function() {
   function onclickButton() {
     document.querySelector('main').scrollTo(0, document.querySelector('ytcp-video-details-section').scrollHeight);
 
-    const toggleButton = document.querySelector('ytcp-button#toggle-button button');
+    waitForAddedNode('ytcp-button#toggle-button').then(toggleButton => {
 
-    if (toggleButton) {
+      console.log('toggleButton', toggleButton);
 
-      const metadata = document.querySelector('ytcp-video-metadata-editor-advanced');
-      let metadataVisible = false;
-      if (metadata) {
-        metadataVisible = metadata.checkVisibility();
-      }
+      if (toggleButton) {
 
-      console.log('metadataVisible', metadataVisible);
-      if (!metadata && !metadataVisible) {
-        console.log('toggleButton.click');
-        toggleButton.click();
-      }
-
-      waitForAddedNode('ytcp-video-metadata-editor-advanced').then(elm => {
-        console.log('metadata editor', elm);
-        if (elm) {
-          const language = document.querySelector('ytcp-form-language-input');
-
-          if (language) {
-            language.click();
-
-            waitForAddedNode('ytcp-text-menu').then(elm => {
-              const german = document.querySelector('tp-yt-paper-item#text-item-39');
-
-              if (german) {
-                german.click();
-              }
-            });
-          }
-
-          const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
-          if (alteredData) {
-            alteredData.click();
-          } else {
-            alert('altered Data radio not found');
-          }
-
-
-          const autoLocation = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(8) ytcp-checkbox-lit');
-          if (autoLocation) {
-            autoLocation.click();
-          } else {
-            alert('location checkbox not found');
-          }
-
-          const autoConcept = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(11) ytcp-form-checkbox');
-          if (autoConcept) {
-            autoConcept.click();
-          } else {
-            alert('auto concept checkbox not found');
-          }
-
-          const catContainer = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced#category-container');
-          if (catContainer) {
-            catContainer.scrollIntoView();
-          }
+        const metadata = document.querySelector('ytcp-video-metadata-editor-advanced');
+        let metadataVisible = false;
+        if (metadata) {
+          metadataVisible = metadata.checkVisibility();
         }
-      });
-    }
 
+        console.log('metadataVisible', metadataVisible);
+        if (!metadata && !metadataVisible) {
+          console.log('toggleButton.click');
+          toggleButton.click();
+        }
+
+        waitForAddedNode('ytcp-video-metadata-editor-advanced').then(elm => {
+          console.log('metadata editor', elm);
+          if (elm) {
+            const language = document.querySelector('ytcp-form-language-input');
+
+            if (language) {
+              language.click();
+
+              waitForAddedNode('ytcp-text-menu').then(elm => {
+                const german = document.querySelector('tp-yt-paper-item#text-item-39');
+
+                if (german) {
+                  german.click();
+                }
+              });
+            }
+
+            const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
+            if (alteredData) {
+              alteredData.click();
+            } else {
+              alert('altered Data radio not found');
+            }
+
+
+            const autoLocation = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(8) ytcp-checkbox-lit');
+            if (autoLocation) {
+              autoLocation.click();
+            } else {
+              alert('location checkbox not found');
+            }
+
+            const autoConcept = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(11) ytcp-form-checkbox');
+            if (autoConcept) {
+              autoConcept.click();
+            } else {
+              alert('auto concept checkbox not found');
+            }
+
+            const catContainer = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced#category-container');
+            if (catContainer) {
+              catContainer.scrollIntoView();
+            }
+          }
+        });
+      }
+    });
   }
 
   function callbackButton () {

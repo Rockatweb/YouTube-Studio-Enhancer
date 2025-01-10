@@ -2,19 +2,13 @@ window.addEventListener('load', function() {
   function onclickButton() {
     document.querySelector('main').scrollTo(0, document.querySelector('ytcp-video-details-section').scrollHeight);
 
-
-    console.log('toggle meee');
     const toggleButton = document.querySelector('ytcp-button#toggle-button');
 
-    console.log(toggleButton);
     if (toggleButton) {
       toggleButton.click();
 
-      console.log(toggleButton);
-
       waitForAddedNode('ytcp-video-metadata-editor-advanced').then(elm => {
         const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
-        console.log(alteredData);
         if (alteredData) {
           alteredData.click();
         } else {
@@ -46,19 +40,9 @@ window.addEventListener('load', function() {
   }
 
   function callbackButton () {
-
     waitForAddedNode('ytcp-button#toggle-button').then(elm => {
       onclickButton();
     });
-
-    // const button = document.createElement('button');
-    // button.innerText = 'Toggle';
-    // document.querySelector('ytcp-entity-page-header h1').appendChild(button);
-    //
-    // button.addEventListener('click', ()=>{
-    //   onclickButton();
-    //   return false;
-    // });
   }
 
   function waitForAddedNode(selector) {

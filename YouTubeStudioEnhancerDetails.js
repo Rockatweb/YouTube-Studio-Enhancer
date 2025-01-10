@@ -54,6 +54,11 @@ window.addEventListener('load', function() {
   function waitForAddedNode(params, callback) {
     const el = document.querySelector(params.elm);
 
+    if (!el) {
+      console.error('Element not found:', el);
+      return false;
+    }
+
     new MutationObserver((mutations, observer) => {
       if (el) {
         observer.disconnect();
@@ -68,7 +73,7 @@ window.addEventListener('load', function() {
   }
 
   waitForAddedNode({
-    elm: 'ytcp-video-details-section',
+    elm: '.ytcp-video-details-section',
     recursive: true,
   }, el => {
     callbackButton();

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Studio Enhancer Details
 // @namespace    youtube
-// @version      0.01
+// @version      0.02
 // @description  A tooling to make YouTube Studio much better
 // @author       You
 // @include      https://studio.youtube.com/video/*

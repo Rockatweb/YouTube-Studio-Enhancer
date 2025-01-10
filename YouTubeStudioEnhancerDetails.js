@@ -51,33 +51,30 @@ window.addEventListener('load', function() {
     });
   }
 
-  function waitForAddedNode(params, callback) {
-    const el = document.querySelector(params.elm);
-
-    if (!el) {
-      console.error('Element not found:', params.elm);
-      return false;
-    } else {
-      console.log(el);
-    }
-
-    new MutationObserver((mutations, observer) => {
-      if (el) {
-        observer.disconnect();
-        callback();
+  function waitForAddedNode(selector) {
+    return new Promise(resolve => {
+      if (document.querySelector(selector)) {
+        return resolve(document.querySelector(selector));
+      } else {
+        console.log('element not found:', selector)
       }
-    }).observe(el, {
-      attributes: true,
-      childList: true,
-      subtree: true,
-      characterData: true
+
+      const observer = new MutationObserver(mutations => {
+        if (document.querySelector(selector)) {
+          observer.disconnect();
+          resolve(document.querySelector(selector));
+        }
+      });
+
+      // If you get "parameter 1 is not of type 'Node'" error, see https://stackoverflow.com/a/77855838/492336
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
     });
   }
 
-  waitForAddedNode({
-    elm: '#entity-page',
-    recursive: true,
-  }, el => {
+  waitForAddedNode('#entity-page').then(elm => {
     callbackButton();
   });
 });

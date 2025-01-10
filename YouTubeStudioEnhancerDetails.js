@@ -75,7 +75,7 @@ window.addEventListener('load', function() {
   }
 
   waitForAddedNode({
-    elm: '.all-pages',
+    elm: '#entity-page',
     recursive: true,
   }, el => {
     callbackButton();

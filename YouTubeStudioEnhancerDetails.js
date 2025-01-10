@@ -75,7 +75,7 @@ window.addEventListener('load', function() {
   }
 
   waitForAddedNode({
-    elm: '.ytcp-video-details-section',
+    elm: '.ytcp-app[name="video.edit"]',
     recursive: true,
   }, el => {
     callbackButton();

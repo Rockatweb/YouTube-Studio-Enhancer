@@ -23,7 +23,7 @@ window.addEventListener('load', function() {
         waitForAddedNode('ytcp-video-metadata-editor-advanced').then(elm => {
           console.log('metadata editor', elm);
           if (elm) {
-                        const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
+            const alteredData = document.querySelector('ytkp-altered-content-select .altered-content-options .altered-content-option-row:nth-child(2) tp-yt-paper-radio-button');
             if (alteredData) {
               alteredData.click();
             } else {
@@ -31,14 +31,14 @@ window.addEventListener('load', function() {
             }
 
 
-            const autoLocation = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(8) ytcp-checkbox-lit');
+            const autoLocation = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(9) ytcp-checkbox-lit');
             if (autoLocation) {
               autoLocation.click();
             } else {
               alert('location checkbox not found');
             }
 
-            const autoConcept = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(11) ytcp-form-checkbox');
+            const autoConcept = document.querySelector('ytcp-video-metadata-editor-advanced .ytcp-video-metadata-editor-advanced:nth-child(12) ytcp-form-checkbox');
             if (autoConcept) {
               autoConcept.click();
             } else {
